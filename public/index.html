@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Registration</title>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin: 24px; max-width: 900px; }
+    h1 { margin-bottom: 8px; }
+    form, table { width: 100%; margin-top: 16px; }
+    label { display:block; margin: 8px 0 4px; }
+    input, select, button { padding: 10px; width: 100%; box-sizing: border-box; }
+    button { cursor: pointer; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; }
+    table { border-collapse: collapse; margin-top: 16px; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    th { background: #f7f7f7; }
+    .muted { color: #666; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <h1>Student Registration</h1>
+  <p class="muted">Seedha form bharo, naya student register hoga; neeche list me dikhega.</p>
+
+  <div class="card">
+    <form id="regForm">
+      <div class="row">
+        <div>
+          <label for="fullName">Full Name *</label>
+          <input id="fullName" name="fullName" required />
+        </div>
+        <div>
+          <label for="email">Email *</label>
+          <input id="email" name="email" type="email" required />
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" />
+        </div>
+        <div>
+          <label for="course">Course *</label>
+          <select id="course" name="course" required>
+            <option value="">-- Select --</option>
+            <option>Computer Science</option>
+            <option>Electronics</option>
+            <option>Mechanical</option>
+            <option>Civil</option>
+          </select>
+        </div>
+      </div>
+      <div style="margin-top:12px">
+        <button type="submit">Register</button>
+      </div>
+    </form>
+  </div>
+
+  <table id="list">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Course</th>
+        <th>Created</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="./script.js"></script>
+</body>
+</html>
