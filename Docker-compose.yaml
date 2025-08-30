@@ -1,0 +1,32 @@
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - student_reg_volume:/db/data
+    networks:
+      - student-reg-network
+
+    env_file:
+       - .env.example
+
+  db:
+    image: mysql:latest
+    container_name: student-reg_db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: Password123
+      MYSQL_DATABASE: student_db
+      
+    
+
+networks:
+  student-reg-network:
+    driver: bridge
+
+volumes:    
+  student_reg_volume:
+    external: true
