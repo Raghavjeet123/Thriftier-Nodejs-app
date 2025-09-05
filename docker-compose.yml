@@ -4,8 +4,6 @@ services:
     build: .
     ports:
       - "3000:3000"
-    volumes:
-      - student_reg_volume:/db/data
     networks:
       - student-reg-network
 
@@ -27,6 +25,3 @@ networks:
   student-reg-network:
     driver: bridge
 
-volumes:    
-  student_reg_volume:
-    external: 
