@@ -100,3 +100,53 @@ th {
 tr:nth-child(even) {
   background: #f2fdfb;
 }
+
+/* 🔹 Extra course dropdown styling */
+select {
+  background: #f9f9f9;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center; /* Align course names to center */
+}
+
+select option {
+  background: #fff;
+  color: #2c3e50;
+  padding: 8px;
+  text-align: center;
+}
+
+/* 🎨 Stylish Course-wise Colors in Dropdown */
+select option[value="Computer Science"] {
+  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+  color: #0d3b66;
+  font-weight: 600;
+  text-align: center;
+}
+
+select option[value="Electronics"] {
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  color: #7f1d1d;
+  font-weight: 600;
+  text-align: center;
+}
+
+select option[value="Mechanical"] {
+  background: linear-gradient(135deg, #d9a7c7, #fffcdc);
+  color: #4a148c;
+  font-weight: 600;
+  text-align: center;
+}
+
+select option[value="Civil"] {
+  background: linear-gradient(135deg, #a1ffce, #faffd1);
+  color: #1b4332;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Hover glow on options */
+select option:hover {
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+  filter: brightness(1.1);
+}
