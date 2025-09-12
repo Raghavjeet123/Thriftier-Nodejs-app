@@ -10,7 +10,7 @@
 <body>
   <div class="container">
     <h1>Student Login</h1>
-    <p class="muted">Enter your details to log in.</p>
+    <p class="muted">Log in to your account</p>
 
     <div class="card">
       <form id="loginForm">
@@ -20,21 +20,29 @@
             <input id="loginName" name="loginName" required />
           </div>
           <div>
-            <label for="loginContact">Contact *</label>
-            <input id="loginContact" name="loginContact" type="text" placeholder="Email or Phone" required />
+            <label for="loginContact">Email or Phone *</label>
+            <input id="loginContact" name="loginContact" type="text" required />
           </div>
         </div>
+
         <div class="row">
-          <div>
+          <div style="width:100%;">
             <label for="loginPassword">Password *</label>
-            <input id="loginPassword" name="loginPassword" type="password" required />
+            <div style="position:relative;">
+              <input id="loginPassword" name="loginPassword" type="password" required />
+              <button type="button" id="togglePassword" 
+                style="position:absolute; right:10px; top:50%; transform:translateY(-50%);
+                padding:4px 8px; font-size:12px; cursor:pointer;">
+                Show
+              </button>
+            </div>
           </div>
         </div>
+
         <button type="submit">Login</button>
       </form>
 
-      <!-- Sign Up Button -->
-      <button id="signupBtn" class="secondary-btn">Go to Sign Up</button>
+      <button id="signupBtn" class="secondary-btn">Create Account</button>
     </div>
   </div>
 </body>

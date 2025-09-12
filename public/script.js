@@ -33,10 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
-            // Check if user exists in students
+            // Dummy validation: check if user exists in students
             const found = students.find(
                 s =>
-                    (s.contact === contact) &&
+                    (s.email === contact || s.phone === contact) &&
                     s.password === password &&
                     s.fullName === name
             );
@@ -53,6 +53,21 @@ document.addEventListener("DOMContentLoaded", function () {
         signupBtn.addEventListener("click", () => {
             window.location.href = "signup.html";
         });
+
+        // Password toggle feature
+        const togglePassword = document.getElementById("togglePassword");
+        if (togglePassword) {
+            togglePassword.addEventListener("click", () => {
+                const pwField = document.getElementById("loginPassword");
+                if (pwField.type === "password") {
+                    pwField.type = "text";
+                    togglePassword.textContent = "Hide";
+                } else {
+                    pwField.type = "password";
+                    togglePassword.textContent = "Show";
+                }
+            });
+        }
     }
 
     // ---------------- Signup Page ----------------
@@ -67,8 +82,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const fullName = document.getElementById("signupName").value.trim();
             const contact = document.getElementById("signupContact").value.trim();
             const password = document.getElementById("signupPassword").value.trim();
-            const course = document.getElementById("signupCourse").value.trim();
-            const dob = document.getElementById("signupDob").value;
+            const course = document.getElementById("course").value.trim();
+            const dob = document.getElementById("dob").value;
 
             if (!fullName || !contact || !password || !course || !dob) {
                 alert("⚠️ Please fill all fields!");
@@ -77,7 +92,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const student = {
                 fullName,
-                contact, // single field for email OR phone
+                email: contact.includes("@") ? contact : "",
+                phone: contact.includes("@") ? "" : contact,
                 password,
                 course,
                 dob,
@@ -99,7 +115,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 tr.innerHTML = `
                   <td>${i + 1}</td>
                   <td>${escapeHtml(s.fullName)}</td>
-                  <td>${escapeHtml(s.contact)}</td>
+                  <td>${escapeHtml(s.email)}</td>
+                  <td>${escapeHtml(s.phone)}</td>
                   <td>${maskPassword(s.password)}</td>
                   <td>${escapeHtml(s.course)}</td>
                   <td>${escapeHtml(s.dob)}</td>
@@ -107,7 +124,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 `;
                 tbody.appendChild(tr);
             });
-            countHeading.textContent = `Total Students: ${students.length}`;
+            if (countHeading) {
+                countHeading.textContent = `Total Students: ${students.length}`;
+            }
         }
 
         // Initial render on page load
