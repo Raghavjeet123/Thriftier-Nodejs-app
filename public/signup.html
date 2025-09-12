@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Sign Up</h1>
+    <p class="muted">Create an account — provide minimal info.</p>
+
+    <div class="card">
+      <form id="signupForm">
+        <div class="row">
+          <div>
+            <label for="signupName">Full Name *</label>
+            <input id="signupName" name="signupName" required />
+          </div>
+          <div>
+            <label for="signupContact">Email or Phone *</label>
+            <input id="signupContact" name="signupContact" type="text" placeholder="Enter Email or Phone" required />
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label for="signupPassword">Password *</label>
+            <input id="signupPassword" name="signupPassword" type="password" required />
+          </div>
+          <div>
+            <label for="signupDob">Date of Birth *</label>
+            <input id="signupDob" name="signupDob" type="date" required />
+          </div>
+        </div>
+
+        <!-- ✅ Course dropdown -->
+        <div class="row">
+          <div>
+            <label for="signupCourse">Select Course *</label>
+            <select id="signupCourse" name="signupCourse" required>
+              <option value="">-- Choose a Course --</option>
+              <option>B.Tech</option>
+              <option>MBA</option>
+              <option>BCA</option>
+              <option>MCA</option>
+              <option>B.Sc</option>
+              <option>M.Sc</option>
+              <option>BA</option>
+              <option>MA</option>
+              <option>B.Com</option>
+              <option>M.Com</option>
+              <option>Diploma</option>
+              <option>PhD</option>
+              <option>LLB</option>
+              <option>LLM</option>
+              <option>MBBS</option>
+              <option>BDS</option>
+              <option>B.Pharm</option>
+              <option>M.Pharm</option>
+              <option>B.Ed</option>
+              <option>M.Ed</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit">Create Account</button>
+      </form>
+
+      <p style="margin-top:12px; font-size:14px; color:#555;">
+        Already have an account? <a href="index.html">Go to Login</a>
+      </p>
+    </div>
+
+    <h2 id="countHeading">Total Students: 0</h2>
+    <table id="list">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Full Name</th>
+          <th>Contact</th>
+          <th>Password</th>
+          <th>Course</th>
+          <th>DOB</th>
+          <th>Created At</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</body>
+</html>

@@ -1,4 +1,3 @@
-/* style.css */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   background: linear-gradient(135deg, #74ebd5, #9face6);
@@ -76,6 +75,25 @@ button:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
+.secondary-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #06beb6, #48b1bf);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 12px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.secondary-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -101,52 +119,25 @@ tr:nth-child(even) {
   background: #f2fdfb;
 }
 
-/* 🔹 Extra course dropdown styling */
-select {
-  background: #f9f9f9;
-  font-weight: 600;
-  cursor: pointer;
-  text-align: center; /* Align course names to center */
-}
-
+/* Dropdown styling */
 select option {
-  background: #fff;
-  color: #2c3e50;
   padding: 8px;
-  text-align: center;
+  font-weight: 500;
+  color: #2c3e50;
+}
+select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 15px;
+  background: #fff;
+  transition: all 0.3s ease-in-out;
 }
 
-/* 🎨 Stylish Course-wise Colors in Dropdown */
-select option[value="Computer Science"] {
-  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
-  color: #0d3b66;
-  font-weight: 600;
-  text-align: center;
-}
-
-select option[value="Electronics"] {
-  background: linear-gradient(135deg, #ffecd2, #fcb69f);
-  color: #7f1d1d;
-  font-weight: 600;
-  text-align: center;
-}
-
-select option[value="Mechanical"] {
-  background: linear-gradient(135deg, #d9a7c7, #fffcdc);
-  color: #4a148c;
-  font-weight: 600;
-  text-align: center;
-}
-
-select option[value="Civil"] {
-  background: linear-gradient(135deg, #a1ffce, #faffd1);
-  color: #1b4332;
-  font-weight: 600;
-  text-align: center;
-}
-
-/* Hover glow on options */
-select option:hover {
-  box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
-  filter: brightness(1.1);
+select:focus {
+  outline: none;
+  border: 1px solid #1abc9c;
+  box-shadow: 0 0 8px rgba(26, 188, 156, 0.4);
 }
